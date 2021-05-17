@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All technique:</title>
+</head>
+<body>
+
+<div th:each="technic : ${technic}">
+    <a th:href="@{/tech/{id}(id=${technic.getId()})}"
+       th:text="${'Name: ' + technic.getName() + ' | wheels: ' + technic.getWheels() +
+        ' | guns: ' + technic.getGuns()}">tech</a>
+</div>
+
+<br/>
+
+<a th:href="@{/tech/new}">Create new tech</a>
+
+</body>
+</html>

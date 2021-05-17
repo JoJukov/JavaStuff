@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tech</title>
+</head>
+<body>
+    <p th:text="${'Name: ' + technic.getName()}"></p>
+    <p th:text="${'Id: ' + technic.getId()}"></p>
+    <p th:text="${'Wheels: ' + technic.getWheels()}"></p>
+    <p th:text="${'Guns: ' + technic.getGuns()}"></p>
+    <a th:href="@{/tech/{id}/edit(id=${technic.getId()})}">edit</a>
+    <form th:href="@{/tech/{id}(id=${technic.getId()})}" th:method="DELETE">
+        <input type="submit" value="delete"/>
+    </form>
+</body>
+</html>

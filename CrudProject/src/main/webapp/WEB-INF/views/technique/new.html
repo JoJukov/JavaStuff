@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New Tech</title>
+</head>
+<body>
+
+<form th:action="@{/tech}" th:method="POST" th:object="${technic}">
+    <label for="name">Enter new name of tech</label>
+    <input id="name" th:field="*{name}" type="text"/>
+    <div style="color: red" th:errors="*{name}" th:if="${#fields.hasErrors('name')}">Name error</div>
+    <br/>
+    <label for="wheels">Enter new number of wheels of tech</label>
+    <input id="wheels" th:field="*{wheels}" type="text"/>
+    <div style="color: red" th:errors="*{wheels}" th:if="${#fields.hasErrors('wheels')}">Wheels error</div>
+    <br/>
+    <label for="guns">Enter new number of guns of tech</label>
+    <input id="guns" th:field="*{guns}" type="text"/>
+    <div style="color: red" th:errors="*{guns}" th:if="${#fields.hasErrors('guns')}">Guns error</div>
+    <br/>
+    <input type="submit" value="Edit"/>
+</form>
+</body>
+</html>

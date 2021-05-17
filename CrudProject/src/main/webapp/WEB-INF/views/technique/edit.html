@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update tech</title>
+</head>
+<body>
+
+<form th:action="@{/tech/{id}(id=${technic.getId()})}" th:method="PATCH" th:object="${technic}">
+    <label for="name">Enter new name of tech</label>
+    <input id="name" th:field="*{name}" type="text"/>
+    <div style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name error</div>
+    <br/>
+    <label for="wheels">Enter new number of wheels of tech</label>
+    <input id="wheels" th:field="*{wheels}" type="text"/>
+    <div style="color: red" th:if="${#fields.hasErrors('wheels')}" th:errors="*{wheels}">Wheels error</div>
+    <br/>
+    <label for="guns">Enter new number of guns of tech</label>
+    <input id="guns" th:field="*{guns}" type="text"/>
+    <div style="color: red" th:if="${#fields.hasErrors('guns')}" th:errors="*{guns}">Guns error</div>
+    <br/>
+    <input type="submit" value="Edit"/>
+</form>
+
+</body>
+</html>
